@@ -12,4 +12,8 @@ class Packjob < ActiveRecord::Base
       self.pj_packer = packer.try(:p_name)
    end	
 
+   
+
+
+
 end

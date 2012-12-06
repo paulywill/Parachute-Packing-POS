@@ -3,7 +3,8 @@ class PackjobsController < ApplicationController
   # GET /packjobs.json
   def index
     @packjobs = Packjob.all
-    @packers = Packer.find(:all, :order => "p_name")
+    @packers = Packer.find(:all)
+
    
     @rigs = Rig.find(:all, :order => "rig_type_number")
 
@@ -17,7 +18,7 @@ class PackjobsController < ApplicationController
   # GET /packjobs/1.json
   def show
     @packjob = Packjob.find(params[:id])
-    
+    @packers = Packer.find(:all)
 
     respond_to do |format|
       format.html # show.html.erb
