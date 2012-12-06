@@ -9,7 +9,7 @@ en:
       models:
         packjob:
           attributes:
-            pj_packer:
+            packer_id:
               blank: "A packer must be selected"
             pj_rig_type_number:
               blank: "A rig must be selected"

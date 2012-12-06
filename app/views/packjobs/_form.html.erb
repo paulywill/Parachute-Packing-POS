@@ -23,13 +23,16 @@
     	<th>Extra Notes</th>
       </tr>
       <tr>
- 	<td><%= f.collection_select(:pj_packer, @packers, :p_name, :p_name, { :include_blank => true} ) %></td>
+ 	<td><%= f.collection_select(:packer_id, @packers, :id, :p_name, { :include_blank => true} ) %></td>
+          
 	<td><%= f.text_field :pj_guestpacker %></td>
-	<!--<td><%#= f.collection_select(:pj_rig, @rigs, :rig_name, :rig_name,  {:include_blank => true}) %></td>-->
+	
 	
 	<td><%= f.collection_select(:pj_rig_type_number, @rigs, :rig_type_number, :rig_type_number,  {:include_blank => true}) %></td>
 	<td><%= f.text_field :pj_damage %></td>
 	<td><%= f.text_field :pj_extranotes %></td>
+
+
       </tr>
     </table
   </div>

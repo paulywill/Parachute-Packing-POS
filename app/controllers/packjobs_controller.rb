@@ -4,6 +4,7 @@ class PackjobsController < ApplicationController
   def index
     @packjobs = Packjob.all
     @packers = Packer.find(:all, :order => "p_name")
+   
     @rigs = Rig.find(:all, :order => "rig_type_number")
 
     respond_to do |format|
@@ -30,6 +31,7 @@ class PackjobsController < ApplicationController
     @packjob = Packjob.new
     @packers = Packer.find(:all, :conditions => { :p_team => "t" }, :order => "p_name")
     @rigs = Rig.find(:all, :conditions => { :rig_status => "t" }, :order => "rig_type_number")
+    @packers_id = Packer.find(:all)
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @packjob }
