@@ -1,27 +1,35 @@
-<h1>Listing packers</h1>
+<h1>Listing Packers</h1>
 
-<table>
+<table id=listtable CELLPADDING=4>
   <tr>
-    <th>P name</th>
-    <th>P cspa date</th>
-    <th>P team</th>
+    <th>Packer</th>
+    <th>CSPA Expiry</th>
+    <th>Packing Team?</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
 
 <% @packers.each do |packer| %>
-  <tr>
+<tr class="<%= cycle('rowA', 'rowB') %>">
+
     <td><%= packer.p_name %></td>
-    <td><%= packer.p_cspa_date %></td>
-    <td><%= packer.p_team %></td>
+    <td><%= packer.p_cspa_date.strftime("%Y-%m-%d") %></td>
+	 <% 
+	if (packer.p_team == true ) 
+		dcolor="TD BGCOLOR=#00ff00"
+	else
+		dcolor="TD BGCOLOR=red" 	
+	end %>
+	<td <%=dcolor%> >
+		<%= packingteam_status_display :boolStatus => packer.p_team %> 
+	</td>
     <td><%= link_to 'Show', packer %></td>
     <td><%= link_to 'Edit', edit_packer_path(packer) %></td>
-    <td><%= link_to 'Destroy', packer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Destroy', packer, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
-<br />
-
+<br>
 <%= link_to 'New Packer', new_packer_path %>

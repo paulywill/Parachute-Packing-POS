@@ -2,7 +2,7 @@ class RigsController < ApplicationController
   # GET /rigs
   # GET /rigs.json
   def index
-    @rigs = Rig.all
+    @rigs = Rig.order(:rig_type_number)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,7 +14,7 @@ class RigsController < ApplicationController
   # GET /rigs/1.json
   def show
     @rig = Rig.find(params[:id])
-
+    @rigs = Rig.order(:rig_type_number)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @rig }
@@ -34,6 +34,7 @@ class RigsController < ApplicationController
 
   # GET /rigs/1/edit
   def edit
+    @rigs = Rig.all
     @rig = Rig.find(params[:id])
   end
 
@@ -41,7 +42,7 @@ class RigsController < ApplicationController
   # POST /rigs.json
   def create
     @rig = Rig.new(params[:rig])
-
+    @rigs = Rig.all
     respond_to do |format|
       if @rig.save
         format.html { redirect_to @rig, notice: 'Rig was successfully created.' }

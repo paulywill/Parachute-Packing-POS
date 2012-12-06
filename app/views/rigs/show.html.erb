@@ -1,15 +1,17 @@
+<div id=content>
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Rig status:</b>
+  <b>Rig Online?:</b>
   <%= @rig.rig_status %>
 </p>
 
 <p>
-  <b>Rig type number:</b>
+  <b>Rig name:</b>
   <%= @rig.rig_type_number %>
 </p>
-
+<%
+=begin %>
 <p>
   <b>Rig jumpnum:</b>
   <%= @rig.rig_jumpnum %>
@@ -39,7 +41,9 @@
   <b>Rig main who:</b>
   <%= @rig.rig_main_who %>
 </p>
-
-
+<% 
+=end %>
+</div id=content>
 <%= link_to 'Edit', edit_rig_path(@rig) %> |
 <%= link_to 'Back', rigs_path %>
+

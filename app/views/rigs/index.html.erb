@@ -1,30 +1,46 @@
 <h1>Listing rigs</h1>
 
-<table>
+<table id=listtable CELLPADDING=4>
   <tr>
-    <th>Rig status</th>
-    <th>Rig type number</th>
-    <th>Rig jumpnum</th>
-    <th>Rig res last</th>
-    <th>Rig res who</th>
-    <th>Rig res due</th>
-    <th>Rig main last</th>
-    <th>Rig main who</th>
-    <th></th>
+    <th>Status</th>
+    <th>Rig </th>
+  <%
+=begin %>
+    <th NOWRAP># Jumps</th>
+    <th>Reserve Repack</th>
+    <th>Rigger</th>
+    <th>Repack Due</th>
+    <th>Last Main Pack</th>
+    <th>Last Packer</th>
+<% 
+=end %>
     <th></th>
     <th></th>
   </tr>
 
 <% @rigs.each do |rig| %>
-  <tr>
-    <td><%= rig.rig_status %></td>
+ <tr class="<%= cycle('rowA', 'rowB') %>">
+    <% 
+	if (rig.rig_status == true ) 
+		dcolor="TD BGCOLOR=#00ff00"
+	else
+		dcolor="TD BGCOLOR=red" 	
+	end %>
+	 
+	<td <%=dcolor%> >
+		<%= rig_status_display :boolStatus => rig.rig_status %> 
+	</td>
     <td><%= rig.rig_type_number %></td>
+<%
+=begin %>
     <td><%= rig.rig_jumpnum %></td>
     <td><%= rig.rig_res_last %></td>
     <td><%= rig.rig_res_who %></td>
     <td><%= rig.rig_res_due %></td>
     <td><%= rig.rig_main_last %></td>
     <td><%= rig.rig_main_who %></td>
+<% 
+=end %>
     <td><%= link_to 'Show', rig %></td>
     <td><%= link_to 'Edit', edit_rig_path(rig) %></td>
     <td><%= link_to 'Destroy', rig, method: :delete, data: { confirm: 'Are you sure?' } %></td>

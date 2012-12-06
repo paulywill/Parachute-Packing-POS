@@ -1,18 +1,10 @@
 Charlie::Application.routes.draw do
   resources :riggers
-
-
   resources :rigs
-
-
   resources :damages
-
-
   resources :packers
-
-
   resources :packjobs
-
+  root :to => 'packjobs#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

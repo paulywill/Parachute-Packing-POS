@@ -1,30 +1,25 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Pj packer:</b>
+   <b>Datestamp:</b>
+  <%= @packjob.created_at.strftime("%m/%d/%Y %I:%M %P") %><br>
+  <br>
+  <b>Packer:</b>
   <%= @packjob.pj_packer %>
 </p>
 
 <p>
-  <b>Pj guestpacker:</b>
-  <%= @packjob.pj_guestpacker %>
-</p>
-
-<p>
-  <b>Pj rig type number:</b>
+  <b>Rig:</b>
   <%= @packjob.pj_rig_type_number %>
 </p>
 
 <p>
-  <b>Pj damage:</b>
-  <%= @packjob.pj_damage %>
-</p>
-
-<p>
-  <b>Pj extranotes:</b>
+  <b>Option / Comments:</b>
   <%= @packjob.pj_extranotes %>
 </p>
 
 
 <%= link_to 'Edit', edit_packjob_path(@packjob) %> |
 <%= link_to 'Back', packjobs_path %>
+
+

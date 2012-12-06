@@ -3,6 +3,8 @@ class PackjobsController < ApplicationController
   # GET /packjobs.json
   def index
     @packjobs = Packjob.all
+    @packers = Packer.find(:all, :order => "p_name")
+    @rigs = Rig.find(:all, :order => "rig_type_number")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,6 +16,7 @@ class PackjobsController < ApplicationController
   # GET /packjobs/1.json
   def show
     @packjob = Packjob.find(params[:id])
+    
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,7 +28,8 @@ class PackjobsController < ApplicationController
   # GET /packjobs/new.json
   def new
     @packjob = Packjob.new
-
+    @packers = Packer.find(:all, :conditions => { :p_team => "t" }, :order => "p_name")
+    @rigs = Rig.find(:all, :conditions => { :rig_status => "t" }, :order => "rig_type_number")
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @packjob }
@@ -35,13 +39,18 @@ class PackjobsController < ApplicationController
   # GET /packjobs/1/edit
   def edit
     @packjob = Packjob.find(params[:id])
+    @packers = Packer.find(:all, :conditions => { :p_team => "t" }, :order => "p_name")
+    @rigs = Rig.find(:all, :conditions => { :rig_status => "t" }, :order => "rig_type_number")
+
   end
 
   # POST /packjobs
   # POST /packjobs.json
   def create
     @packjob = Packjob.new(params[:packjob])
-
+    @packers = Packer.find(:all, :conditions => { :p_team => "t" }, :order => "p_name")
+    @rigs = Rig.find(:all, :conditions => { :rig_status => "t" }, :order => "rig_type_number")
+    
     respond_to do |format|
       if @packjob.save
         format.html { redirect_to @packjob, notice: 'Packjob was successfully created.' }
@@ -57,6 +66,8 @@ class PackjobsController < ApplicationController
   # PUT /packjobs/1.json
   def update
     @packjob = Packjob.find(params[:id])
+    @packers = Packer.find(:all, :conditions => { :p_team => "t" }, :order => "p_name")
+    @rigs = Rig.find(:all, :conditions => { :rig_status => "t" }, :order => "rig_type_number")
 
     respond_to do |format|
       if @packjob.update_attributes(params[:packjob])

@@ -1,19 +1,21 @@
-<h1>Listing packjobs</h1>
+<h1>Packjobs</h1>
 
-<table>
+<table id=listtable CELLPADDING="4" border="1">
   <tr>
-    <th>Pj packer</th>
-    <th>Pj guestpacker</th>
-    <th>Pj rig type number</th>
-    <th>Pj damage</th>
-    <th>Pj extranotes</th>
+    <th>Datestamp</th>
+    <th>Packer</th>
+    <th>Guest Packer</th>
+    <th>Rig</th>
+    <th>Damage</th>
+    <th>Extra Notes</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
-
-<% @packjobs.each do |packjob| %>
-  <tr>
+ 
+  <% @packjobs.each do |packjob| %>
+  <tr class="<%= cycle('rowA', 'rowB') %>">
+    <td><%= packjob.created_at.strftime("%m/%d/%Y %I:%M:%S %P") %></td>
     <td><%= packjob.pj_packer %></td>
     <td><%= packjob.pj_guestpacker %></td>
     <td><%= packjob.pj_rig_type_number %></td>
@@ -21,7 +23,7 @@
     <td><%= packjob.pj_extranotes %></td>
     <td><%= link_to 'Show', packjob %></td>
     <td><%= link_to 'Edit', edit_packjob_path(packjob) %></td>
-    <td><%= link_to 'Destroy', packjob, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Destroy', packjob, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
@@ -29,3 +31,4 @@
 <br />
 
 <%= link_to 'New Packjob', new_packjob_path %>
+

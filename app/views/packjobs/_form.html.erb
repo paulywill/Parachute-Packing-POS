@@ -11,26 +11,29 @@
     </div>
   <% end %>
 
+<br />
   <div class="field">
-    <%= f.label :pj_packer %><br />
-    <%= f.text_field :pj_packer %>
+    <%= f.label Time.now.strftime("%m/%d/%Y %I:%M:%S %P") %><br />
+    <table cellspacing="10">
+      <tr>
+    	<th>Packer</th>
+	<th>Guest Packer</th>
+    	<th>Rig Type</th>
+    	<th>Damage</th>
+    	<th>Extra Notes</th>
+      </tr>
+      <tr>
+ 	<td><%= f.collection_select(:pj_packer, @packers, :p_name, :p_name, { :include_blank => true} ) %></td>
+	<td><%= f.text_field :pj_guestpacker %></td>
+	<!--<td><%#= f.collection_select(:pj_rig, @rigs, :rig_name, :rig_name,  {:include_blank => true}) %></td>-->
+	
+	<td><%= f.collection_select(:pj_rig_type_number, @rigs, :rig_type_number, :rig_type_number,  {:include_blank => true}) %></td>
+	<td><%= f.text_field :pj_damage %></td>
+	<td><%= f.text_field :pj_extranotes %></td>
+      </tr>
+    </table
   </div>
-  <div class="field">
-    <%= f.label :pj_guestpacker %><br />
-    <%= f.text_field :pj_guestpacker %>
-  </div>
-  <div class="field">
-    <%= f.label :pj_rig_type_number %><br />
-    <%= f.text_field :pj_rig_type_number %>
-  </div>
-  <div class="field">
-    <%= f.label :pj_damage %><br />
-    <%= f.text_field :pj_damage %>
-  </div>
-  <div class="field">
-    <%= f.label :pj_extranotes %><br />
-    <%= f.text_field :pj_extranotes %>
-  </div>
+  <br />
   <div class="actions">
     <%= f.submit %>
   </div>
