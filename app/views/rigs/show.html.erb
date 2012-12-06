@@ -10,6 +10,26 @@
   <b>Rig name:</b>
   <%= @rig.rig_type_number %>
 </p>
+
+<p>
+ 
+  <br/>
+  <table id=listtable CELLPADDING="4" border="1">
+    <tr>
+      <th>Packjobs:</th>
+      
+    </tr>   
+    <% @rig.rigs.each do |rig| %>
+    <tr class="<%= cycle('rowA', 'rowB') %>">
+        <td><%= link_to  packjob.created_at.strftime("%m/%d/%Y %I:%M:%S %P") + " " + packjob.pj_guestpacker + " " + packjob.pj_rig_type_number + " " + packjob.pj_damage + " " + packjob.pj_extranotes, packjob %></td
+    </tr>
+  <% end %><br/>
+
+  </table>	 
+  <%= link_to "Create new packjob", new_packjob_path %> 
+</p>
+
+
 <%
 =begin %>
 <p>
