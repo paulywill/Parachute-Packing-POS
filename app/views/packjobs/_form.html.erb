@@ -1,0 +1,37 @@
+<%= form_for(@packjob) do |f| %>
+  <% if @packjob.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@packjob.errors.count, "error") %> prohibited this packjob from being saved:</h2>
+
+      <ul>
+      <% @packjob.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :pj_packer %><br />
+    <%= f.text_field :pj_packer %>
+  </div>
+  <div class="field">
+    <%= f.label :pj_guestpacker %><br />
+    <%= f.text_field :pj_guestpacker %>
+  </div>
+  <div class="field">
+    <%= f.label :pj_rig_type_number %><br />
+    <%= f.text_field :pj_rig_type_number %>
+  </div>
+  <div class="field">
+    <%= f.label :pj_damage %><br />
+    <%= f.text_field :pj_damage %>
+  </div>
+  <div class="field">
+    <%= f.label :pj_extranotes %><br />
+    <%= f.text_field :pj_extranotes %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

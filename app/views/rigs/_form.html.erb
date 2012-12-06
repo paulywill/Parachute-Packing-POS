@@ -1,0 +1,49 @@
+<%= form_for(@rig) do |f| %>
+  <% if @rig.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rig.errors.count, "error") %> prohibited this rig from being saved:</h2>
+
+      <ul>
+      <% @rig.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :rig_status %><br />
+    <%= f.check_box :rig_status %>
+  </div>
+  <div class="field">
+    <%= f.label :rig_type_number %><br />
+    <%= f.text_field :rig_type_number %>
+  </div>
+  <div class="field">
+    <%= f.label :rig_jumpnum %><br />
+    <%= f.number_field :rig_jumpnum %>
+  </div>
+  <div class="field">
+    <%= f.label :rig_res_last %><br />
+    <%= f.date_select :rig_res_last %>
+  </div>
+  <div class="field">
+    <%= f.label :rig_res_who %><br />
+    <%= f.text_field :rig_res_who %>
+  </div>
+  <div class="field">
+    <%= f.label :rig_res_due %><br />
+    <%= f.date_select :rig_res_due %>
+  </div>
+  <div class="field">
+    <%= f.label :rig_main_last %><br />
+    <%= f.datetime_select :rig_main_last %>
+  </div>
+  <div class="field">
+    <%= f.label :rig_main_who %><br />
+    <%= f.text_field :rig_main_who %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

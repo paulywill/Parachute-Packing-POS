@@ -1,0 +1,29 @@
+<%= form_for(@rigger) do |f| %>
+  <% if @rigger.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rigger.errors.count, "error") %> prohibited this rigger from being saved:</h2>
+
+      <ul>
+      <% @rigger.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :rigger_name %><br />
+    <%= f.text_field :rigger_name %>
+  </div>
+  <div class="field">
+    <%= f.label :rigger_rating %><br />
+    <%= f.text_field :rigger_rating %>
+  </div>
+  <div class="field">
+    <%= f.label :rigger_licnum %><br />
+    <%= f.text_field :rigger_licnum %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

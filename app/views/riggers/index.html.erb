@@ -1,0 +1,27 @@
+<h1>Listing riggers</h1>
+
+<table>
+  <tr>
+    <th>Rigger name</th>
+    <th>Rigger rating</th>
+    <th>Rigger licnum</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @riggers.each do |rigger| %>
+  <tr>
+    <td><%= rigger.rigger_name %></td>
+    <td><%= rigger.rigger_rating %></td>
+    <td><%= rigger.rigger_licnum %></td>
+    <td><%= link_to 'Show', rigger %></td>
+    <td><%= link_to 'Edit', edit_rigger_path(rigger) %></td>
+    <td><%= link_to 'Destroy', rigger, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Rigger', new_rigger_path %>

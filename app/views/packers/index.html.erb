@@ -1,0 +1,27 @@
+<h1>Listing packers</h1>
+
+<table>
+  <tr>
+    <th>P name</th>
+    <th>P cspa date</th>
+    <th>P team</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @packers.each do |packer| %>
+  <tr>
+    <td><%= packer.p_name %></td>
+    <td><%= packer.p_cspa_date %></td>
+    <td><%= packer.p_team %></td>
+    <td><%= link_to 'Show', packer %></td>
+    <td><%= link_to 'Edit', edit_packer_path(packer) %></td>
+    <td><%= link_to 'Destroy', packer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Packer', new_packer_path %>

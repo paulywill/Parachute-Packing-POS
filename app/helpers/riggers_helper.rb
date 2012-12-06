@@ -1,0 +1,2 @@
+module RiggersHelper
+end

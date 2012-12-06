@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Rigger name:</b>
+  <%= @rigger.rigger_name %>
+</p>
+
+<p>
+  <b>Rigger rating:</b>
+  <%= @rigger.rigger_rating %>
+</p>
+
+<p>
+  <b>Rigger licnum:</b>
+  <%= @rigger.rigger_licnum %>
+</p>
+
+
+<%= link_to 'Edit', edit_rigger_path(@rigger) %> |
+<%= link_to 'Back', riggers_path %>

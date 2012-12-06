@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>P name:</b>
+  <%= @packer.p_name %>
+</p>
+
+<p>
+  <b>P cspa date:</b>
+  <%= @packer.p_cspa_date %>
+</p>
+
+<p>
+  <b>P team:</b>
+  <%= @packer.p_team %>
+</p>
+
+
+<%= link_to 'Edit', edit_packer_path(@packer) %> |
+<%= link_to 'Back', packers_path %>

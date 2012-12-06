@@ -1,0 +1,33 @@
+<%= form_for(@damage) do |f| %>
+  <% if @damage.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@damage.errors.count, "error") %> prohibited this damage from being saved:</h2>
+
+      <ul>
+      <% @damage.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :dam_dstamp %><br />
+    <%= f.datetime_select :dam_dstamp %>
+  </div>
+  <div class="field">
+    <%= f.label :dam_rig %><br />
+    <%= f.text_field :dam_rig %>
+  </div>
+  <div class="field">
+    <%= f.label :dam_detail %><br />
+    <%= f.text_area :dam_detail %>
+  </div>
+  <div class="field">
+    <%= f.label :dam_reporter %><br />
+    <%= f.text_field :dam_reporter %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

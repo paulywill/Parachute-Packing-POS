@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  pj_packer: MyString
+  pj_guestpacker: MyString
+  pj_rig_type_number: MyString
+  pj_damage: MyString
+  pj_extranotes: MyString
+
+two:
+  pj_packer: MyString
+  pj_guestpacker: MyString
+  pj_rig_type_number: MyString
+  pj_damage: MyString
+  pj_extranotes: MyString

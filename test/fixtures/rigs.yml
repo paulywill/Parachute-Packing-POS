@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  rig_status: false
+  rig_type_number: MyString
+  rig_jumpnum: 1
+  rig_res_last: 2012-12-05
+  rig_res_who: MyString
+  rig_res_due: 2012-12-05
+  rig_main_last: 2012-12-05 21:25:41
+  rig_main_who: MyString
+
+two:
+  rig_status: false
+  rig_type_number: MyString
+  rig_jumpnum: 1
+  rig_res_last: 2012-12-05
+  rig_res_who: MyString
+  rig_res_due: 2012-12-05
+  rig_main_last: 2012-12-05 21:25:41
+  rig_main_who: MyString

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Dam dstamp:</b>
+  <%= @damage.dam_dstamp %>
+</p>
+
+<p>
+  <b>Dam rig:</b>
+  <%= @damage.dam_rig %>
+</p>
+
+<p>
+  <b>Dam detail:</b>
+  <%= @damage.dam_detail %>
+</p>
+
+<p>
+  <b>Dam reporter:</b>
+  <%= @damage.dam_reporter %>
+</p>
+
+
+<%= link_to 'Edit', edit_damage_path(@damage) %> |
+<%= link_to 'Back', damages_path %>

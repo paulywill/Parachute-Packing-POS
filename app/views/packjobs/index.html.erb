@@ -1,0 +1,31 @@
+<h1>Listing packjobs</h1>
+
+<table>
+  <tr>
+    <th>Pj packer</th>
+    <th>Pj guestpacker</th>
+    <th>Pj rig type number</th>
+    <th>Pj damage</th>
+    <th>Pj extranotes</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @packjobs.each do |packjob| %>
+  <tr>
+    <td><%= packjob.pj_packer %></td>
+    <td><%= packjob.pj_guestpacker %></td>
+    <td><%= packjob.pj_rig_type_number %></td>
+    <td><%= packjob.pj_damage %></td>
+    <td><%= packjob.pj_extranotes %></td>
+    <td><%= link_to 'Show', packjob %></td>
+    <td><%= link_to 'Edit', edit_packjob_path(packjob) %></td>
+    <td><%= link_to 'Destroy', packjob, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Packjob', new_packjob_path %>

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Pj packer:</b>
+  <%= @packjob.pj_packer %>
+</p>
+
+<p>
+  <b>Pj guestpacker:</b>
+  <%= @packjob.pj_guestpacker %>
+</p>
+
+<p>
+  <b>Pj rig type number:</b>
+  <%= @packjob.pj_rig_type_number %>
+</p>
+
+<p>
+  <b>Pj damage:</b>
+  <%= @packjob.pj_damage %>
+</p>
+
+<p>
+  <b>Pj extranotes:</b>
+  <%= @packjob.pj_extranotes %>
+</p>
+
+
+<%= link_to 'Edit', edit_packjob_path(@packjob) %> |
+<%= link_to 'Back', packjobs_path %>

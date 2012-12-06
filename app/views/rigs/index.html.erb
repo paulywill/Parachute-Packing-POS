@@ -1,0 +1,37 @@
+<h1>Listing rigs</h1>
+
+<table>
+  <tr>
+    <th>Rig status</th>
+    <th>Rig type number</th>
+    <th>Rig jumpnum</th>
+    <th>Rig res last</th>
+    <th>Rig res who</th>
+    <th>Rig res due</th>
+    <th>Rig main last</th>
+    <th>Rig main who</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @rigs.each do |rig| %>
+  <tr>
+    <td><%= rig.rig_status %></td>
+    <td><%= rig.rig_type_number %></td>
+    <td><%= rig.rig_jumpnum %></td>
+    <td><%= rig.rig_res_last %></td>
+    <td><%= rig.rig_res_who %></td>
+    <td><%= rig.rig_res_due %></td>
+    <td><%= rig.rig_main_last %></td>
+    <td><%= rig.rig_main_who %></td>
+    <td><%= link_to 'Show', rig %></td>
+    <td><%= link_to 'Edit', edit_rig_path(rig) %></td>
+    <td><%= link_to 'Destroy', rig, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Rig', new_rig_path %>

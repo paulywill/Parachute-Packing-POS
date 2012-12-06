@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Rig status:</b>
+  <%= @rig.rig_status %>
+</p>
+
+<p>
+  <b>Rig type number:</b>
+  <%= @rig.rig_type_number %>
+</p>
+
+<p>
+  <b>Rig jumpnum:</b>
+  <%= @rig.rig_jumpnum %>
+</p>
+
+<p>
+  <b>Rig res last:</b>
+  <%= @rig.rig_res_last %>
+</p>
+
+<p>
+  <b>Rig res who:</b>
+  <%= @rig.rig_res_who %>
+</p>
+
+<p>
+  <b>Rig res due:</b>
+  <%= @rig.rig_res_due %>
+</p>
+
+<p>
+  <b>Rig main last:</b>
+  <%= @rig.rig_main_last %>
+</p>
+
+<p>
+  <b>Rig main who:</b>
+  <%= @rig.rig_main_who %>
+</p>
+
+
+<%= link_to 'Edit', edit_rig_path(@rig) %> |
+<%= link_to 'Back', rigs_path %>

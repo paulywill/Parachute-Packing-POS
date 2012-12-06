@@ -1,0 +1,29 @@
+<h1>Listing damages</h1>
+
+<table>
+  <tr>
+    <th>Dam dstamp</th>
+    <th>Dam rig</th>
+    <th>Dam detail</th>
+    <th>Dam reporter</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @damages.each do |damage| %>
+  <tr>
+    <td><%= damage.dam_dstamp %></td>
+    <td><%= damage.dam_rig %></td>
+    <td><%= damage.dam_detail %></td>
+    <td><%= damage.dam_reporter %></td>
+    <td><%= link_to 'Show', damage %></td>
+    <td><%= link_to 'Edit', edit_damage_path(damage) %></td>
+    <td><%= link_to 'Destroy', damage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Damage', new_damage_path %>

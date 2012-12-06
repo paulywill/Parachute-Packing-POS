@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  rigger_name: MyString
+  rigger_rating: MyString
+  rigger_licnum: MyString
+
+two:
+  rigger_name: MyString
+  rigger_rating: MyString
+  rigger_licnum: MyString
