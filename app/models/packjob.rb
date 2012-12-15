@@ -6,9 +6,11 @@ class Packjob < ActiveRecord::Base
    
    belongs_to :packer
    belongs_to :rig
+   belongs_to :damage
 
    before_save :set_pj_packer
    before_save :set_pj_rig_type_number	
+
    
    def set_pj_packer
       self.pj_packer = packer.try(:p_name)
@@ -19,4 +21,5 @@ class Packjob < ActiveRecord::Base
       self.pj_rig_type_number = rig.try(:rig_type_number)
    end
    
+
 end

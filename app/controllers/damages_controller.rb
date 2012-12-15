@@ -3,6 +3,8 @@ class DamagesController < ApplicationController
   # GET /damages.json
   def index
     @damages = Damage.all
+    @packers = Packer.find(:all)	
+    @rigs = Rig.find(:all, :order => "rig_type_number")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,6 +16,7 @@ class DamagesController < ApplicationController
   # GET /damages/1.json
   def show
     @damage = Damage.find(params[:id])
+    @packers = Packer.find(:all)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,6 +28,8 @@ class DamagesController < ApplicationController
   # GET /damages/new.json
   def new
     @damage = Damage.new
+    @packers = Packer.find(:all)
+    @rigs = Rig.find(:all, :conditions => { :rig_status => "t" }, :order => "rig_type_number")
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,12 +40,16 @@ class DamagesController < ApplicationController
   # GET /damages/1/edit
   def edit
     @damage = Damage.find(params[:id])
+    @packers = Packer.find(:all, :conditions => { :p_team => "t" }, :order => "p_name")
+    @rigs = Rig.find(:all, :conditions => { :rig_status => "t" }, :order => "rig_type_number")
   end
 
   # POST /damages
   # POST /damages.json
   def create
     @damage = Damage.new(params[:damage])
+    @packers = Packer.find(:all, :conditions => { :p_team => "t" }, :order => "p_name")
+    @rigs = Rig.find(:all, :conditions => { :rig_status => "t" }, :order => "rig_type_number")
 
     respond_to do |format|
       if @damage.save
@@ -57,6 +66,8 @@ class DamagesController < ApplicationController
   # PUT /damages/1.json
   def update
     @damage = Damage.find(params[:id])
+    @packers = Packer.find(:all, :conditions => { :p_team => "t" }, :order => "p_name")
+    @rigs = Rig.find(:all, :conditions => { :rig_status => "t" }, :order => "rig_type_number")
 
     respond_to do |format|
       if @damage.update_attributes(params[:damage])

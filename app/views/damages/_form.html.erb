@@ -12,12 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :dam_dstamp %><br />
-    <%= f.datetime_select :dam_dstamp %>
+    <%= f.label Time.now.strftime("%m/%d/%Y %I:%M:%S %P") %><br />
   </div>
   <div class="field">
     <%= f.label :dam_rig %><br />
-    <%= f.text_field :dam_rig %>
+    <%= f.collection_select(:dam_rig, @rigs, :id, :rig_type_number,  {:include_blank => true}) %>
   </div>
   <div class="field">
     <%= f.label :dam_detail %><br />
@@ -25,7 +24,8 @@
   </div>
   <div class="field">
     <%= f.label :dam_reporter %><br />
-    <%= f.text_field :dam_reporter %>
+    <%= f.collection_select(:dam_reporter, @packers, :id, :p_name, { :include_blank => true} ) %>
+    
   </div>
   <div class="actions">
     <%= f.submit %>

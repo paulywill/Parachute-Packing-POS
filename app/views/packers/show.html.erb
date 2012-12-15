@@ -16,8 +16,6 @@
 </p>
 
 <p>
- 
-  <br/>
   <table id=listtable CELLPADDING="4" border="1">
     <tr>
       <th>Packjobs:</th>
@@ -25,14 +23,13 @@
     </tr>   
     <% @packer.packjobs.each do |packjob| %>
     <tr class="<%= cycle('rowA', 'rowB') %>">
-        <td><%= link_to  packjob.created_at.strftime("%m/%d/%Y %I:%M:%S %P") + " " + packjob.pj_guestpacker + " " + packjob.pj_rig_type_number + " " + packjob.pj_damage + " " + packjob.pj_extranotes, packjob %></td
+        <td><%= link_to  packjob.created_at.strftime("%m/%d/%Y %I:%M:%S %P") + "_____" + packjob.pj_guestpacker + "_____" + packjob.pj_rig_type_number + "_____" + packjob.pj_damage + "_____" + packjob.pj_extranotes, packjob %></td
     </tr>
   <% end %><br/>
 
   </table>	 
-  <%= link_to "Create new packjob", new_packjob_path %> 
 </p>
 
 
 <%= link_to 'Edit', edit_packer_path(@packer) %> |
-<%= link_to 'Back', packers_path %>
+<%= link_to 'Back', packjobs_path %>
