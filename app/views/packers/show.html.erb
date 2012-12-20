@@ -18,12 +18,19 @@
 <p>
   <table id=listtable CELLPADDING="4" border="1">
     <tr>
-      <th>Packjobs:</th>
-      
-    </tr>   
+    	<th>Datestamp</th>
+	<th>Guest Packer</th>
+    	<th>Rig Type</th>
+    	<th>Damage</th>
+    	<th>Extra Notes</th>
+      </tr>  
     <% @packer.packjobs.each do |packjob| %>
     <tr class="<%= cycle('rowA', 'rowB') %>">
-        <td><%= link_to  packjob.created_at.strftime("%m/%d/%Y %I:%M:%S %P") + "_____" + packjob.pj_guestpacker + "_____" + packjob.pj_rig_type_number + "_____" + packjob.pj_damage + "_____" + packjob.pj_extranotes, packjob %></td
+        <td><%= link_to  packjob.created_at.strftime("%m/%d/%Y %I:%M:%S %P"), packjob %></td>
+	<td><%= packjob.pj_guestpacker %></td>
+	<td><%= link_to packjob.pj_rig_type_number,rig_path(packjob.rig_id) %></td>
+	<td><%= packjob.pj_damage %></td>
+	<td><%= packjob.pj_extranotes %></td>
     </tr>
   <% end %><br/>
 

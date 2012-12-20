@@ -12,20 +12,24 @@
 </p>
 
 <p>
- 
   <br/>
- 
-  
   <table id=listtable CELLPADDING="4" border="1">
     <tr>
-      <th>Packjobs:</th>
-    </tr>   
+        <th>Datestamp</th>
+	<th>Packer</th>
+	<th>Guest Packer</th>    	
+    	<th>Damage</th>
+    	<th>Extra Notes</th>
+    </tr> 
     <% @rig.packjobs.each do |packjob| %>
     <tr class="<%= cycle('rowA', 'rowB') %>">
-        <td><%= link_to  packjob.created_at.strftime("%m/%d/%Y %I:%M:%S %P") + "_____" + packjob.pj_packer + "_____" + packjob.pj_guestpacker + "_____" + packjob.pj_damage + "_____" + packjob.pj_extranotes, packjob %></td
+        <td><%= link_to  packjob.created_at.strftime("%m/%d/%Y %I:%M:%S %P"), packjob %></td> 
+	<td><%= packjob.pj_packer %></td>
+	<td><%= packjob.pj_guestpacker %></td> 
+	<td><%= packjob.pj_damage %></td> 
+	<td><%= packjob.pj_extranotes %></td>
     </tr>
   <% end %><br/>
-
   </table>	
 </p>
 

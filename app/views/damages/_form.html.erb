@@ -16,7 +16,7 @@
   </div>
   <div class="field">
     <%= f.label :dam_rig %><br />
-    <%= f.collection_select(:dam_rig, @rigs, :id, :rig_type_number,  {:include_blank => true}) %>
+    <%= f.collection_select(:rig_id, @rigs, :id, :rig_type_number,  {:include_blank => true}) %>
   </div>
   <div class="field">
     <%= f.label :dam_detail %><br />
@@ -24,7 +24,7 @@
   </div>
   <div class="field">
     <%= f.label :dam_reporter %><br />
-    <%= f.collection_select(:dam_reporter, @packers, :id, :p_name, { :include_blank => true} ) %>
+    <%= f.collection_select(:packer_id, @packers, :id, :p_name, { :include_blank => true} ) %>
     
   </div>
   <div class="actions">

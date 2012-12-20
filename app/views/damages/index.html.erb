@@ -1,6 +1,6 @@
 <h1>Listing damages</h1>
 
-<table>
+<table id=listtable CELLPADDING="4" border="1">
   <tr>
     <th>Dam rig</th>
     <th>Dam detail</th>
@@ -10,8 +10,8 @@
     <th></th>
   </tr>
 
-<% @damages.each do |damage| %>
-  <tr>
+  <% @damages.each do |damage| %>
+  <tr class="<%= cycle('rowA', 'rowB') %>">
     <td><%= damage.dam_rig %></td>
     <td><%= damage.dam_detail %></td>
     <td><%= damage.dam_reporter %></td>

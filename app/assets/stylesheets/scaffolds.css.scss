@@ -28,6 +28,7 @@ a:link{
 #listtable border{ color: blue; }
 #listtable tr.rowA { background-color: white; }
 #listtable tr.rowB { background-color: #65A5CF; }
+#listtable { border-collapse:separate; empty-cells:show;}
 
 #notice {
   color: green;

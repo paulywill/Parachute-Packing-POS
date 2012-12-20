@@ -1,6 +1,9 @@
 class Damage < ActiveRecord::Base
   attr_accessible :dam_detail, :dam_reporter, :dam_rig, :packer_id, :rig_id
 
+  validates :packer_id, :presence  => true
+  validates :rig_id, :presence  => true  
+
   belongs_to :packer
   belongs_to :packjob
   belongs_to :rig
