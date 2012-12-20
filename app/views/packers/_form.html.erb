@@ -1,9 +1,7 @@
-app/views/packers/_form.html.erb
 <%= form_for(@packer) do |f| %>
   <% if @packer.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@packer.errors.count, "error") %> prohibited this packer from being saved:</h2>
-
       <ul>
       <% @packer.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -14,16 +12,16 @@ app/views/packers/_form.html.erb
 
   <div class="field">
     <%= f.label "Packer" %><br />
-    <%= f.text_field :p_name %>
-  </div>
+    <%= f.text_field :p_name %><br />
+  </div><br />
   <div class="field">
     <%= f.label "CSPA Expiry" %><br />
-    <%= f.date_select :p_cspa_date %>
-  </div>
+    <%= f.date_select :p_cspa_date %><br />
+  </div><br />
   <div class="field">
     <%= f.label "On Team?" %><br />
-    <%= f.check_box :p_team %>
-  </div>
+    <%= f.check_box :p_team %><br />
+  </div><br />
   <div class="actions">
     <%= f.submit %>
   </div>
