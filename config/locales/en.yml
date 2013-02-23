@@ -11,5 +11,13 @@ en:
           attributes:
             packer_id:
               blank: "A packer must be selected"
-            pj_rig_type_number:
+            rig_id:
+              blank: "A rig must be selected"
+        damage:
+          attributes:
+            dam_detail:
+              blank: "Leave some damn details!!!"
+            packer_id:
+              blank: "A packer must be selected"
+            rig_id:
               blank: "A rig must be selected"

@@ -1,4 +1,7 @@
 class RigsController < ApplicationController
+
+  http_basic_authenticate_with :name => "posadmin", :password => "W=rcopto", :except => [:index, :show]
+
   # GET /rigs
   # GET /rigs.json
   def index

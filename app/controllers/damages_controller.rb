@@ -1,4 +1,7 @@
 class DamagesController < ApplicationController
+
+  http_basic_authenticate_with :name => "posadmin", :password => "W=rcopto", :except => [:index, :show, :new]  
+	
   # GET /damages
   # GET /damages.json
   def index

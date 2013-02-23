@@ -3,6 +3,7 @@ class Damage < ActiveRecord::Base
 
   validates :packer_id, :presence  => true
   validates :rig_id, :presence  => true  
+  validates :dam_detail, :presence  => true  
 
   belongs_to :packer
   belongs_to :packjob
