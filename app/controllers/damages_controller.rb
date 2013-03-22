@@ -1,6 +1,6 @@
 class DamagesController < ApplicationController
 
-  http_basic_authenticate_with :name => "posadmin", :password => "W=rcopto", :except => [:index, :show, :new]  
+  http_basic_authenticate_with :name => "posadmin", :password => "W=rcopto", :except => [:index, :show, :new, :create]  
 	
   # GET /damages
   # GET /damages.json

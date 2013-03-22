@@ -1,10 +1,11 @@
-<h1>Listing damages</h1>
+<h1>Listing Damages</h1>
 
 <table id=listtable CELLPADDING="4" border="1">
   <tr>
-    <th>Dam rig</th>
-    <th>Dam detail</th>
-    <th>Dam reporter</th>
+    <th>Damaged Rig</th>
+    <th>Damage Detail</th>
+    <th>Damage Reporter</th>
+    <th>Damage Fixed?</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,6 +16,7 @@
     <td><%= damage.dam_rig %></td>
     <td><%= damage.dam_detail %></td>
     <td><%= damage.dam_reporter %></td>
+    <td><%= damage.dam_fixed %></td>
     <td><%= link_to 'Show', damage %></td>
     <td><%= link_to 'Edit', edit_damage_path(damage) %></td>
     <td><%= link_to 'Destroy', damage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -24,4 +26,8 @@
 
 <br />
 
-<%= link_to 'New Damage', new_damage_path %>
+<%= link_to 'New Damage', new_damage_path %> |
+<%= link_to 'Packjobs', packjobs_path %> |
+<%= link_to 'Packers', packers_path %> |
+<%= link_to 'Rigs', rigs_path %> 
+

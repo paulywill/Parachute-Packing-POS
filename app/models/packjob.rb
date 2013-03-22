@@ -1,13 +1,11 @@
 class Packjob < ActiveRecord::Base
-   attr_accessible :pj_damage, :pj_extranotes, :pj_guestpacker, :pj_packer, :pj_rig_type_number, :packer_id, :rig_id
+    			        			  attr_accessible :pj_extranotes, :pj_guestpacker, :pj_packer, :pj_rig_type_number, :packer_id, :rig_id
 
    validates :packer_id, :presence  => true
    validates :rig_id, :presence  => true
    
    belongs_to :packer
    belongs_to :rig
-   has_one :damage
-   accepts_nested_attributes_for :damage
 
    before_save :set_pj_packer
    before_save :set_pj_rig_type_number	

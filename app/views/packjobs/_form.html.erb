@@ -19,14 +19,12 @@
     	<th>Packer</th>
 	<th>Guest Packer</th>
     	<th>Rig Type</th>
-    	<th>Damage</th>
     	<th>Extra Notes</th>
       </tr>
       <tr>
  	<td><%= f.collection_select(:packer_id, @packers, :id, :p_name, { :include_blank => true} ) %></td>
         <td><%= f.text_field :pj_guestpacker %></td>
 	<td><%= f.collection_select(:rig_id, @rigs, :id, :rig_type_number,  {:include_blank => true}) %></td>
-	<td><%= f.text_field :pj_damage %></td>
 	<td><%= f.text_field :pj_extranotes %></td>
       </tr>
     </table

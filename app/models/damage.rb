@@ -5,20 +5,22 @@ class Damage < ActiveRecord::Base
   validates :rig_id, :presence  => true  
   validates :dam_detail, :presence  => true  
 
-  belongs_to :packer
   belongs_to :packjob
+  belongs_to :packer
   belongs_to :rig
 
   before_save :set_dam_reporter
   before_save :set_dam_rig
    
   def set_dam_reporter
-     self.dam_reporter = packer.try(:p_name)
+    self.dam_reporter = packer.try(:p_name)
   end	
 
 
   def set_dam_rig
-     self.dam_rig = rig.try(:rig_type_number)
+    self.dam_rig = rig.try(:rig_type_number)
   end
+
+
 
 end

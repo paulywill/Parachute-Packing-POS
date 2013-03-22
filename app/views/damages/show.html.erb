@@ -6,20 +6,25 @@
   <br>
 </p>
 <p>
-  <b>Dam rig:</b>
+  <b>Damaged Rig:</b>
   <%= @damage.dam_rig %>
 </p>
 
 <p>
-  <b>Dam detail:</b>
+  <b>Damage Detail:</b>
   <%= @damage.dam_detail %>
 </p>
 
 <p>
-  <b>Dam reporter:</b>
+  <b>Damage Reporter:</b>
   <%= @damage.dam_reporter %>
 </p>
 
+<p>
+  <b>Damage Fixed:</b>
+  <%= @damage.dam_fixed %>
+</p>
 
-<%= link_to 'Edit', edit_damage_path(@damage) %> |
-<%= link_to 'Back', damages_path %>
+<%= link_to 'Packjobs', packjobs_path %> |
+<%= link_to 'Packers', packers_path %> |
+<%= link_to 'Rigs', rigs_path %> 

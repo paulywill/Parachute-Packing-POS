@@ -21,7 +21,6 @@
     	<th>Datestamp</th>
 	<th>Guest Packer</th>
     	<th>Rig Type</th>
-    	<th>Damage</th>
     	<th>Extra Notes</th>
       </tr>  
     <% @packer.packjobs.each do |packjob| %>
@@ -29,7 +28,6 @@
         <td><%= link_to  packjob.created_at.strftime("%m/%d/%Y %I:%M:%S %P"), packjob %></td>
 	<td><%= packjob.pj_guestpacker %></td>
 	<td><%= link_to packjob.pj_rig_type_number,rig_path(packjob.rig_id) %></td>
-	<td><%= packjob.pj_damage %></td>
 	<td><%= packjob.pj_extranotes %></td>
     </tr>
   <% end %><br/>
@@ -40,4 +38,6 @@
 <%= link_to 'Edit', edit_packer_path(@packer) %> |
 <%= link_to 'Packers', packers_path %> |
 <%= link_to 'Packjobs', packjobs_path %> |
-<%= link_to 'Rigs', rigs_path %> 
+<%= link_to 'Rigs', rigs_path %> |
+<%= link_to 'Damages', damages_path %>
+

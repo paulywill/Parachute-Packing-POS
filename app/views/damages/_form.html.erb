@@ -15,19 +15,23 @@
     <%= f.label Time.now.strftime("%m/%d/%Y %I:%M:%S %P") %><br />
   </div>
   <div class="field">
-    <%= f.label :dam_rig %><br />
-    <%= f.collection_select(:rig_id, @rigs, :id, :rig_type_number,  {:include_blank => true}) %>
+    <%= f.label "Damaged Rig:" %><br />
+    <%= f.collection_select(:rig_id, @rigs, :id, :rig_type_number,  {:include_blank => true}) %><br />
   </div>
   <div class="field">
-    <%= f.label :dam_detail %><br />
-    <%= f.text_area :dam_detail %>
+    <%= f.label "Damage Detail" %><br />
+    <%= f.text_area :dam_detail %><br />
   </div>
   <div class="field">
-    <%= f.label :dam_reporter %><br />
-    <%= f.collection_select(:packer_id, @packers, :id, :p_name, { :include_blank => true} ) %>
-    
+    <%= f.label "Damage Reporter" %><br />
+    <%= f.collection_select(:packer_id, @packers, :id, :p_name, { :include_blank => true} ) %><br
   </div>
+  <div class="field">
+    <%= f.label "Damage Fixed?" %><br />
+    <%= f.check_box :dam_fixed %><br />
+  </div><br />
   <div class="actions">
+    <br />
     <%= f.submit %>
   </div>
 <% end %>
