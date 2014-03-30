@@ -1,8 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to 'New Packjob', new_packjob_path %> |
+<%= link_to 'Packjobs', packjobs_path %> |
+<%= link_to 'Packers', packers_path %> |
+<%= link_to 'Rigs', rigs_path %> |
+<%= link_to 'Damages', damages_path %>
+
+
 <p>
    <b>Datestamp:</b>
-  <%= @packjob.created_at.strftime("%m/%d/%Y %I:%M %P") %><br>
+   <%= @packjob.created_at.strftime("%m/%d/%Y %I:%M %P") %><br>
   <br>
 </p>
   <b>Packer:</b>
@@ -24,10 +31,6 @@
   <%= @packjob.pj_extranotes %>
 </p>
 
-<%= link_to 'Packjobs', packjobs_path %> |
-<%= link_to 'Packers', packers_path %> |
-<%= link_to 'Rigs', rigs_path %> |
-<%= link_to 'Damages', damages_path %>
 
 
 
