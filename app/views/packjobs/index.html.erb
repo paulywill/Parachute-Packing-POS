@@ -14,7 +14,7 @@
     <th></th>
     <th></th>
   </tr>
- 
+
   <% @packjobs.each do |packjob| %>
   <tr class="<%= cycle('rowA', 'rowB') %>">
     <td><%= link_to packjob.created_at.strftime("%m/%d/%Y %I:%M:%S %P"),packjob_path(packjob.id) %></td>
@@ -28,7 +28,6 @@
   </tr>
 <% end %>
 </table>
-
 <br />
-
-
+<%= will_paginate @packjobs %>
+<br />

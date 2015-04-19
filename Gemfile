@@ -1,3 +1,6 @@
+
+
+
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.9'
@@ -21,6 +24,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+gem 'will_paginate', '~> 3.0.6'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
