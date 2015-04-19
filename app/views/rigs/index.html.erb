@@ -1,5 +1,12 @@
 <h1>Listing Rigs</h1>
 
+
+<%= link_to 'New Rig', new_rig_path %> |
+<%= link_to 'Packers', packers_path %> |
+<%= link_to 'Packjobs', packjobs_path %> |
+<%= link_to 'Damages', damages_path %>
+<br>
+
 <table id=listtable CELLPADDING=4 >
   <tr>
     <th>Status</th>
@@ -12,7 +19,7 @@
     <th>Repack Due</th>
     <th>Last Main Pack</th>
     <th>Last Packer</th>
-<% 
+<%
 =end %>
     <th></th>
     <th></th>
@@ -20,15 +27,15 @@
 
 <% @rigs.each do |rig| %>
  <tr class="<%= cycle('rowA', 'rowB') %>">
-    <% 
-	if (rig.rig_status == true ) 
+    <%
+	if (rig.rig_status == true )
 		dcolor="TD BGCOLOR=#00ff00"
 	else
-		dcolor="TD BGCOLOR=red" 	
+		dcolor="TD BGCOLOR=red"
 	end %>
-	 
+
 	<td <%=dcolor%> >
-		<%= rig_status_display :boolStatus => rig.rig_status %> 
+		<%= rig_status_display :boolStatus => rig.rig_status %>
 	</td>
     <td><%= rig.rig_type_number %></td>
 <%
@@ -39,7 +46,7 @@
     <td><%= rig.rig_res_due %></td>
     <td><%= rig.rig_main_last %></td>
     <td><%= rig.rig_main_who %></td>
-<% 
+<%
 =end %>
     <td><%= link_to 'Show', rig %></td>
     <td><%= link_to 'Edit', edit_rig_path(rig) %></td>
@@ -54,4 +61,3 @@
 <%= link_to 'Packers', packers_path %> |
 <%= link_to 'Packjobs', packjobs_path %> |
 <%= link_to 'Damages', damages_path %>
-

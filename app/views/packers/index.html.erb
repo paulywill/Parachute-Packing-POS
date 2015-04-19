@@ -1,5 +1,11 @@
 <h1>Listing Packers</h1>
 
+<%= link_to 'New Packer', new_packer_path %> |
+<%= link_to 'Packjobs', packjobs_path %> |
+<%= link_to 'Rigs', rigs_path %> |
+<%= link_to 'Damages', damages_path %>
+<br>
+<br>
 <table id=listtable CELLPADDING=4 >
   <tr>
     <th>Packer</th>
@@ -13,16 +19,16 @@
 <% @packers.each do |packer| %>
 <tr class="<%= cycle('rowA', 'rowB') %>">
     <td><%= link_to packer.p_name,packer_path(packer.id) %></td>
-   
+
     <td><%= packer.p_cspa_date.strftime("%Y-%m-%d") %></td>
-	 <% 
-	if (packer.p_team == true ) 
+	 <%
+	if (packer.p_team == true )
 		dcolor="TD BGCOLOR=#00ff00"
 	else
-		dcolor="TD BGCOLOR=red" 	
+		dcolor="TD BGCOLOR=red"
 	end %>
 	<td <%=dcolor%> >
-		<%= packingteam_status_display :boolStatus => packer.p_team %> 
+		<%= packingteam_status_display :boolStatus => packer.p_team %>
 	</td>
     <td><%= link_to 'Show', packer %></td>
     <td><%= link_to 'Edit', edit_packer_path(packer) %></td>
@@ -36,4 +42,3 @@
 <%= link_to 'Packjobs', packjobs_path %> |
 <%= link_to 'Rigs', rigs_path %> |
 <%= link_to 'Damages', damages_path %>
-

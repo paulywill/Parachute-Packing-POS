@@ -16,18 +16,18 @@
     <tr>
         <th>Datestamp</th>
 	<th>Packer</th>
-	<th>Guest Packer</th>    	
+	<th>Guest Packer</th>
     	<th>Extra Notes</th>
-    </tr> 
+    </tr>
     <% @rig.packjobs.each do |packjob| %>
     <tr class="<%= cycle('rowA', 'rowB') %>">
-        <td><%= link_to  packjob.created_at.strftime("%m/%d/%Y %I:%M:%S %P"), packjob %></td> 
+        <td><%= link_to  packjob.created_at, packjob %></td> 
 	<td><%= link_to packjob.pj_packer,packer_path(packjob.packer_id) %></td>
-	<td><%= packjob.pj_guestpacker %></td> 
+	<td><%= packjob.pj_guestpacker %></td>
 	<td><%= packjob.pj_extranotes %></td>
     </tr>
   <% end %><br/>
-  </table>	
+  </table>
 </p>
 
 
@@ -62,13 +62,10 @@
   <b>Rig main who:</b>
   <%= @rig.rig_main_who %>
 </p>
-<% 
+<%
 =end %>
 </div id=content>
 <%= link_to 'Edit', edit_rig_path(@rig) %> |
 <%= link_to 'Rigs', rigs_path %> |
 <%= link_to 'Packjobs', packjobs_path %> |
 <%= link_to 'Damages', damages_path %>
-
-
-
