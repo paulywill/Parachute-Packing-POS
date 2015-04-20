@@ -51,6 +51,7 @@ class PackjobsController < ApplicationController
   # POST /packjobs
   # POST /packjobs.json
   def create
+    @packjobs = Packjob.find(:all)
     @packjob = Packjob.new(params[:packjob])
     @packers = Packer.find(:all, :conditions => { :p_team => "t" }, :order => "p_name")
     @rigs = Rig.find(:all, :conditions => { :rig_status => "t" }, :order => "rig_type_number")
