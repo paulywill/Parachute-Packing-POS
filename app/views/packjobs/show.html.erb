@@ -9,7 +9,7 @@
 
 <p>
    <b>Datestamp:</b>
-   <%= @packjob.created_at.strftime("%m/%d/%Y %I:%M %P") %><br>
+  <%= @packjob.created_at.strftime("%m/%d/%Y %I:%M %P") %><br>
   <br>
 </p>
   <b>Packer:</b>
@@ -31,5 +31,3 @@
   <%= @packjob.pj_extranotes %>
 </p>
 <br/>
-
-<%= will_paginate @packjobs %>

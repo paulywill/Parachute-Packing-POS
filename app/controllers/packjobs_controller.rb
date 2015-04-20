@@ -5,7 +5,7 @@ class PackjobsController < ApplicationController
   # GET /packjobs
   # GET /packjobs.json
   def index
-    @packjobs = Packjob.paginate(:page => params[:page], :per_page => 25, :order => "created_at DESC")
+    @packjobs = Packjob.paginate(:page => params[:page], :per_page => 100, :order => "created_at DESC")
     @packers = Packer.find(:all)
     @rigs = Rig.find(:all, :order => "rig_type_number")
 
@@ -18,7 +18,7 @@ class PackjobsController < ApplicationController
   # GET /packjobs/1
   # GET /packjobs/1.json
   def show
-    @packjobs = Packjob.paginate(:page => params[:page], :per_page => 25)
+    @packjob = Packjob.find(params[:id])
     @packers = Packer.find(:all)
 
     respond_to do |format|
@@ -51,6 +51,7 @@ class PackjobsController < ApplicationController
   # POST /packjobs
   # POST /packjobs.json
   def create
+    @packjobs = Packjob.find(:all)
     @packjob = Packjob.new(params[:packjob])
     @packers = Packer.find(:all, :conditions => { :p_team => "t" }, :order => "p_name")
     @rigs = Rig.find(:all, :conditions => { :rig_status => "t" }, :order => "rig_type_number")
