@@ -1,8 +1,26 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to 'Edit', edit_packer_path(@packer) %> |
+<%= link_to 'Packers', packers_path %> |
+<%= link_to 'Packjobs', packjobs_path %> |
+<%= link_to 'Rigs', rigs_path %> |
+<%= link_to 'Damages', damages_path %>
+<br>
+<br>
+<div id="pdf">
+<object	data="/assets/pdfs/<%= @packer.p_name %>.pdf#toolbar=1&amp;navpanes=0&amp;scrollbar=1&amp;page=1&amp;view=FitH"
+        type="application/pdf"
+        width="100%"
+        height="100%">
+
+</object>
+</div>
+<br>
+
 <p>
   <b>Packer:</b>
   <%= @packer.p_name %>
+
 </p>
 
 <p>
@@ -22,7 +40,7 @@
 	<th>Guest Packer</th>
     	<th>Rig Type</th>
     	<th>Extra Notes</th>
-      </tr>  
+      </tr>
     <% @packer.packjobs.each do |packjob| %>
     <tr class="<%= cycle('rowA', 'rowB') %>">
         <td><%= link_to  packjob.created_at.strftime("%m/%d/%Y %I:%M:%S %P"), packjob %></td>
@@ -31,7 +49,7 @@
 	<td><%= packjob.pj_extranotes %></td>
     </tr>
   <% end %><br/>
-  </table>	 
+  </table>
 </p>
 
 
@@ -40,4 +58,3 @@
 <%= link_to 'Packjobs', packjobs_path %> |
 <%= link_to 'Rigs', rigs_path %> |
 <%= link_to 'Damages', damages_path %>
-
