@@ -6,7 +6,7 @@
 <%= link_to 'Damages', damages_path %>
 <br>
 <br>
-<table id=listtable CELLPADDING=4 >
+<table id=listtable CELLPADDING=4  border="1">
   <tr>
     <th>Packer</th>
     <th>CSPA Expiry</th>
@@ -18,16 +18,23 @@
 
 <% @packers.each do |packer| %>
 <tr class="<%= cycle('rowA', 'rowB') %>">
-    <td><%= link_to packer.p_name,packer_path(packer.id) %></td>
 
-    <td><%= packer.p_cspa_date.strftime("%Y-%m-%d") %></td>
+    <td><%= link_to packer.p_name,packer_path(packer.id) %></td>
+    <%
+   if (packer.p_cspa_date > DateTime.now )
+     cspa_color="TD BGCOLOR=#00ff00"
+   else
+     cspa_color="TD BGCOLOR=red"
+   end %>
+
+    <td <%=cspa_color%> ><%= packer.p_cspa_date.strftime("%Y-%m-%d") %></td>
 	 <%
 	if (packer.p_team == true )
-		dcolor="TD BGCOLOR=#00ff00"
+		team_color="TD BGCOLOR=#00ff00"
 	else
-		dcolor="TD BGCOLOR=red"
+		team_color="TD BGCOLOR=red"
 	end %>
-	<td <%=dcolor%> >
+	<td <%=team_color%> >
 		<%= packingteam_status_display :boolStatus => packer.p_team %>
 	</td>
     <td><%= link_to 'Show', packer %></td>
