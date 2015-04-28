@@ -31,7 +31,7 @@ class PackjobsController < ApplicationController
   # GET /packjobs/new.json
   def new
     @packjob = Packjob.new
-    @packers = Packer.find(:all, :conditions => { :p_team => "t" }, :order => "p_name")
+    @packers = Packer.where("p_team = 't' AND p_cspa_date > ?", DateTime.now).order(:p_name)
     @rigs = Rig.find(:all, :conditions => { :rig_status => "t" }, :order => "rig_type_number")
 
     respond_to do |format|
@@ -43,7 +43,7 @@ class PackjobsController < ApplicationController
   # GET /packjobs/1/edit
   def edit
     @packjob = Packjob.find(params[:id])
-    @packers = Packer.find(:all, :conditions => { :p_team => "t" }, :order => "p_name")
+    @packers = Packer.where("p_team = 't' AND p_cspa_date > ?", DateTime.now).order(:p_name)
     @rigs = Rig.find(:all, :conditions => { :rig_status => "t" }, :order => "rig_type_number")
 
   end
@@ -53,7 +53,7 @@ class PackjobsController < ApplicationController
   def create
     @packjobs = Packjob.find(:all)
     @packjob = Packjob.new(params[:packjob])
-    @packers = Packer.find(:all, :conditions => { :p_team => "t" }, :order => "p_name")
+    @packers = Packer.where("p_team = 't' AND p_cspa_date > ?", DateTime.now).order(:p_name)
     @rigs = Rig.find(:all, :conditions => { :rig_status => "t" }, :order => "rig_type_number")
 
     respond_to do |format|
@@ -71,7 +71,7 @@ class PackjobsController < ApplicationController
   # PUT /packjobs/1.json
   def update
     @packjob = Packjob.find(params[:id])
-    @packers = Packer.find(:all, :conditions => { :p_team => "t" }, :order => "p_name")
+    @packers = Packer.where("p_team = 't' AND p_cspa_date < ?", DateTime.now).order(:p_name)
     @rigs = Rig.find(:all, :conditions => { :rig_status => "t" }, :order => "rig_type_number")
 
     respond_to do |format|
