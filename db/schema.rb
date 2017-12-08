@@ -11,17 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121210181133) do
+ActiveRecord::Schema.define(:version => 20121206022714) do
 
   create_table "damages", :force => true do |t|
+    t.datetime "dam_dstamp"
     t.string   "dam_rig"
     t.text     "dam_detail"
     t.string   "dam_reporter"
-    t.boolean  "dam_fixed"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
-    t.integer  "packer_id"
-    t.integer  "rig_id"
   end
 
   create_table "packers", :force => true do |t|
@@ -36,11 +34,10 @@ ActiveRecord::Schema.define(:version => 20121210181133) do
     t.string   "pj_packer"
     t.string   "pj_guestpacker"
     t.string   "pj_rig_type_number"
+    t.string   "pj_damage"
     t.string   "pj_extranotes"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
-    t.integer  "packer_id"
-    t.integer  "rig_id"
   end
 
   create_table "riggers", :force => true do |t|
