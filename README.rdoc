@@ -1,4 +1,4 @@
-== RoR POS
+== Parachute Packing POS
 
 This is a Ruby on Rails POS I created for a local skydiving dropzone.
 
@@ -14,4 +14,4 @@ UPDATE (DEC 2017):
 
   * bundle update has introduced some new changes that
 
-  * using TDD to get back into working state 
+  * using TDD to get back into working state
