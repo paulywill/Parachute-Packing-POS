@@ -2,17 +2,26 @@
 
 This is a Ruby on Rails POS I created for a local skydiving dropzone.
 
-The parachute packers used this hacked up app to track their pack jobs.  One of my pro·té·gé took over the team and created another version that's CSS/PHP/MySQL with some invoice creation.
+The parachute packers used this hacked up app to track their pack jobs.
+One of my pro·té·gé took over the team and created another version that's CSS/PHP/MySQL with some invoice creation.
 
 This was basically a beta version to get the job done.
+
+
+
+
+
+
+
+
 
 == Getting Started
 
 1. At the command prompt, create a new Rails application:
-       <tt>rails new myapp</tt> (where <tt>myapp</tt> is the application name)
+       <b>rails new myapp</b> (where <b>myapp</b> is the application name)
 
-2. Change directory to <tt>myapp</tt> and start the web server:
-       <tt>cd myapp; rails server</tt> (run with --help for options)
+2. Change directory to <b>myapp</b> and start the web server:
+       <b>cd myapp; rails server</b> (run with --help for options)
 
 3. Go to http://localhost:3000/ and you'll see:
        "Welcome aboard: You're riding Ruby on Rails!"
@@ -67,7 +76,7 @@ Debugger support is available through the debugger command when you start your
 Mongrel or WEBrick server with --debugger. This means that you can break out of
 execution at any point in the code, investigate and change the model, and then,
 resume execution! You need to install ruby-debug to run the server in debugging
-mode. With gems, use <tt>sudo gem install ruby-debug</tt>. Example:
+mode. With gems, use <b>sudo gem install ruby-debug</b>. Example:
 
   class WeblogController < ActionController::Base
     def index
@@ -105,18 +114,18 @@ configured, just like it is when the application is running. You can inspect
 domain models, change values, and save to the database. Starting the script
 without arguments will launch it in the development environment.
 
-To start the console, run <tt>rails console</tt> from the application
+To start the console, run <b>rails console</b> from the application
 directory.
 
 Options:
 
-* Passing the <tt>-s, --sandbox</tt> argument will rollback any modifications
+* Passing the <b>-s, --sandbox</b> argument will rollback any modifications
   made to the database.
 * Passing an environment name as an argument will load the corresponding
-  environment. Example: <tt>rails console production</tt>.
+  environment. Example: <b>rails console production</b>.
 
 To reload your controllers and models after launching the console run
-<tt>reload!</tt>
+<b>reload!</b>
 
 More information about irb can be found at:
 link:http://www.rubycentral.org/pickaxe/irb.html
@@ -124,11 +133,11 @@ link:http://www.rubycentral.org/pickaxe/irb.html
 
 == dbconsole
 
-You can go to the command line of your database directly through <tt>rails
-dbconsole</tt>. You would be connected to the database with the credentials
+You can go to the command line of your database directly through <b>rails
+dbconsole</b>. You would be connected to the database with the credentials
 defined in database.yml. Starting the script without arguments will connect you
 to the development database. Passing an argument will connect you to a different
-database, like <tt>rails dbconsole production</tt>. Currently works for MySQL,
+database, like <b>rails dbconsole production</b>. Currently works for MySQL,
 PostgreSQL and SQLite 3.
 
 == Description of Contents
@@ -196,7 +205,7 @@ app/views
 app/views/layouts
   Holds the template files for layouts to be used with views. This models the
   common header/footer method of wrapping views. In your views, define a layout
-  using the <tt>layout :default</tt> and create a file named default.html.erb.
+  using the <b>layout :default</b> and create a file named default.html.erb.
   Inside default.html.erb, call <% yield %> to render the view using this
   layout.
 
@@ -215,7 +224,7 @@ db
 
 doc
   This directory is where your application documentation will be stored when
-  generated using <tt>rake doc:app</tt>
+  generated using <b>rake doc:app</b>
 
 lib
   Application specific libraries. Basically, any kind of custom code that
