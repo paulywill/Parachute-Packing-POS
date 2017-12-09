@@ -1,6 +1,6 @@
-class PackjobsController < ApplicationController
+class PackjobsController < ApplicationController::Base
 
-  http_basic_authenticate_with :name => "posadmin", :password => "W=rcopto", :except => [:index, :show, :new, :create]
+  #http_basic_authenticate_with :name => "posadmin", :password => "W=rcopto", :except => [:index, :show, :new, :create]
 
   # GET /packjobs
   # GET /packjobs.json
