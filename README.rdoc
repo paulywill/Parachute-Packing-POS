@@ -12,6 +12,6 @@ This was basically a beta version to get the job done.
 
 UPDATE (DEC 2017):
 
-  * bundle update has introduced some new changes that
+  * bundle update has introduced some new changes that regressed 
 
   * using TDD to get back into working state
